@@ -1,8 +1,8 @@
 class ChoresController < ApplicationController
-  before_action :find_user, only: [:index, :create]
+  before_action :find_user, only: [:create]
 
   def index
-    @chores = Chore.all
+    @chores = Chore.where(user: @user)
   end
 
   def show
