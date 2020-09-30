@@ -4,7 +4,8 @@ class CreateChores < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :description
       t.integer :priority
-      t.boolean :complete
+      t.date :due_date
+      t.boolean :complete, default: false
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
